@@ -100,6 +100,10 @@
       font-size: 15px;
     }
 
+    .field input::placeholder {
+      color: #6f6f82;
+    }
+
     .field input:focus {
       border-color: #8b5cff;
       box-shadow: 0 0 0 3px rgba(139,92,255,0.12);
@@ -121,6 +125,13 @@
 
     .create-button:hover {
       transform: translateY(-2px);
+      box-shadow: 0 12px 35px rgba(108,44,255,0.3);
+    }
+
+    .create-button:disabled {
+      opacity: 0.7;
+      cursor: wait;
+      transform: none;
     }
 
     .terms {
@@ -187,56 +198,64 @@
   <form onsubmit="createAccount(event)">
 
     <div class="field">
-      <label>الاسم</label>
+      <label for="name">الاسم</label>
 
       <input
         type="text"
         id="name"
         placeholder="اكتب اسمك"
+        autocomplete="name"
         required
       >
     </div>
 
 
     <div class="field">
-      <label>البريد الإلكتروني</label>
+      <label for="email">البريد الإلكتروني</label>
 
       <input
         type="email"
         id="email"
         placeholder="example@email.com"
+        autocomplete="email"
         required
       >
     </div>
 
 
     <div class="field">
-      <label>كلمة المرور</label>
+      <label for="password">كلمة المرور</label>
 
       <input
         type="password"
         id="password"
         placeholder="8 أحرف على الأقل"
         minlength="8"
+        autocomplete="new-password"
         required
       >
     </div>
 
 
     <div class="field">
-      <label>تأكيد كلمة المرور</label>
+      <label for="confirmPassword">تأكيد كلمة المرور</label>
 
       <input
         type="password"
         id="confirmPassword"
         placeholder="أعد كتابة كلمة المرور"
         minlength="8"
+        autocomplete="new-password"
         required
       >
     </div>
 
 
-    <button class="create-button" type="submit">
+    <button
+      class="create-button"
+      id="createButton"
+      type="submit"
+    >
       إنشاء الحساب
     </button>
 
@@ -272,7 +291,7 @@
       document.getElementById("name").value.trim();
 
     const email =
-      document.getElementById("email").value.trim();
+      document.getElementById("email").value.trim().toLowerCase();
 
     const password =
       document.getElementById("password").value;
@@ -280,7 +299,38 @@
     const confirmPassword =
       document.getElementById("confirmPassword").value;
 
+    const button =
+      document.getElementById("createButton");
 
+
+    // التأكد من الاسم
+    if (!name) {
+
+      alert("من فضلك اكتب اسمك.");
+
+      return;
+    }
+
+
+    // التأكد من البريد
+    if (!email) {
+
+      alert("من فضلك اكتب البريد الإلكتروني.");
+
+      return;
+    }
+
+
+    // التأكد من طول كلمة المرور
+    if (password.length < 8) {
+
+      alert("كلمة المرور يجب أن تكون 8 أحرف على الأقل ❌");
+
+      return;
+    }
+
+
+    // التأكد من تطابق كلمتي المرور
     if (password !== confirmPassword) {
 
       alert("كلمتا المرور غير متطابقتين ❌");
@@ -289,15 +339,57 @@
     }
 
 
+    // منع الضغط المتكرر
+    button.disabled = true;
+    button.textContent = "جاري إنشاء الحساب...";
+
+
+    /*
+      تخزين بيانات المستخدم الأساسية فقط.
+
+      لا نقوم بتخزين كلمة المرور هنا
+      لأن localStorage غير مناسب لتخزين كلمات المرور
+      في نظام حقيقي.
+    */
+
+    const user = {
+      name: name,
+      email: email
+    };
+
+
+    localStorage.setItem(
+      "vizoraUser",
+      JSON.stringify(user)
+    );
+
+
+    // تسجيل حالة المستخدم
+    localStorage.setItem(
+      "vizoraLoggedIn",
+      "true"
+    );
+
+
+    // رسالة النجاح
     alert(
       "تم إنشاء الحساب بنجاح 🎉\n\n" +
       "مرحبًا " + name +
-      "\n\nسيتم تفعيل الحسابات الحقيقية في المرحلة القادمة."
+      "\n\n" +
+      "سيتم نقلك الآن إلى VIZORA AI."
     );
+
+
+    /*
+      بعد الضغط على "حسنًا"
+      يتم فتح صفحة إنشاء الفيديو.
+    */
+
+    window.location.href = "create.html";
 
   }
 
 </script>
 
 </body>
-  </html>
+        </html>
