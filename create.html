@@ -22,11 +22,9 @@
     body {
       min-height: 100vh;
       background: #070711;
-      color: #ffffff;
+      color: #fff;
       overflow-x: hidden;
     }
-
-    /* الخلفية */
 
     .background-glow {
       position: fixed;
@@ -34,14 +32,12 @@
       height: 500px;
       background: #6c2cff;
       filter: blur(190px);
-      opacity: 0.12;
+      opacity: .12;
       border-radius: 50%;
       top: -150px;
       right: 20%;
       pointer-events: none;
     }
-
-    /* الهيدر */
 
     header {
       height: 76px;
@@ -49,12 +45,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-
-      background: rgba(7,7,17,0.88);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-
+      background: rgba(7,7,17,.88);
+      border-bottom: 1px solid rgba(255,255,255,.08);
       backdrop-filter: blur(20px);
-
       position: sticky;
       top: 0;
       z-index: 20;
@@ -64,7 +57,6 @@
       display: flex;
       align-items: center;
       gap: 10px;
-
       font-size: 21px;
       font-weight: bold;
       letter-spacing: 1px;
@@ -73,22 +65,12 @@
     .logo-icon {
       width: 38px;
       height: 38px;
-
       border-radius: 12px;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
-      background: linear-gradient(
-        135deg,
-        #00e5ff,
-        #7c3cff,
-        #ff3cac
-      );
-
-      box-shadow:
-        0 0 25px rgba(124,60,255,0.4);
+      background: linear-gradient(135deg,#00e5ff,#7c3cff,#ff3cac);
+      box-shadow: 0 0 25px rgba(124,60,255,.4);
     }
 
     .user-area {
@@ -103,31 +85,25 @@
     }
 
     .logout {
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
       color: #aaaabd;
-
       padding: 9px 14px;
       border-radius: 10px;
-
       cursor: pointer;
-      transition: 0.3s;
+      transition: .3s;
     }
 
     .logout:hover {
-      background: rgba(255,255,255,0.08);
+      background: rgba(255,255,255,.08);
       color: white;
     }
-
-    /* المحتوى */
 
     .container {
       width: 100%;
       max-width: 1150px;
       margin: auto;
-
       padding: 55px 25px 80px;
-
       position: relative;
       z-index: 2;
     }
@@ -137,36 +113,24 @@
       margin-bottom: 45px;
     }
 
-    .page-title .badge {
+    .badge {
       display: inline-block;
-
       padding: 8px 15px;
-
       border-radius: 30px;
-
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
       color: #bdbdce;
-
       font-size: 13px;
-
       margin-bottom: 18px;
     }
 
     .page-title h1 {
-      font-size: clamp(32px, 5vw, 52px);
+      font-size: clamp(32px,5vw,52px);
       margin-bottom: 12px;
     }
 
     .gradient {
-      background: linear-gradient(
-        90deg,
-        #00e5ff,
-        #8b5cff,
-        #ff3cac
-      );
-
+      background: linear-gradient(90deg,#00e5ff,#8b5cff,#ff3cac);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -178,65 +142,38 @@
       line-height: 1.7;
     }
 
-    /* الكارد الرئيسي */
-
     .creator {
       max-width: 900px;
       margin: auto;
-
       padding: 30px;
-
       border-radius: 24px;
-
-      background: rgba(255,255,255,0.045);
-
-      border: 1px solid rgba(255,255,255,0.09);
-
+      background: rgba(255,255,255,.045);
+      border: 1px solid rgba(255,255,255,.09);
       backdrop-filter: blur(20px);
-
-      box-shadow:
-        0 25px 80px rgba(0,0,0,0.35);
+      box-shadow: 0 25px 80px rgba(0,0,0,.35);
     }
-
-    /* عنوان الحقل */
 
     .label {
       display: block;
-
       color: #e0e0eb;
-
       font-size: 15px;
-
       font-weight: bold;
-
       margin-bottom: 10px;
     }
-
-    /* فكرة الفيديو */
 
     textarea {
       width: 100%;
       min-height: 180px;
-
       resize: vertical;
-
       padding: 18px;
-
       border-radius: 16px;
-
-      border: 1px solid rgba(255,255,255,0.1);
-
+      border: 1px solid rgba(255,255,255,.1);
       outline: none;
-
-      background: rgba(0,0,0,0.25);
-
+      background: rgba(0,0,0,.25);
       color: white;
-
       font-size: 15px;
-
       line-height: 1.8;
-
-      transition: 0.3s;
+      transition: .3s;
     }
 
     textarea::placeholder {
@@ -245,62 +182,40 @@
 
     textarea:focus {
       border-color: #8b5cff;
-
-      box-shadow:
-        0 0 0 3px rgba(139,92,255,0.1);
+      box-shadow: 0 0 0 3px rgba(139,92,255,.1);
     }
 
     .textarea-footer {
       display: flex;
       justify-content: space-between;
-
       margin-top: 7px;
-
       color: #666679;
-
       font-size: 12px;
     }
 
-    /* الاختيارات */
-
     .options {
       display: grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
+      grid-template-columns: repeat(2,1fr);
       gap: 18px;
-
       margin-top: 28px;
     }
 
     .option-group {
       padding: 18px;
-
       border-radius: 16px;
-
-      background: rgba(0,0,0,0.18);
-
-      border: 1px solid rgba(255,255,255,0.07);
+      background: rgba(0,0,0,.18);
+      border: 1px solid rgba(255,255,255,.07);
     }
 
     select {
       width: 100%;
-
       padding: 13px;
-
       border-radius: 12px;
-
-      border: 1px solid rgba(255,255,255,0.1);
-
+      border: 1px solid rgba(255,255,255,.1);
       background: #10101c;
-
       color: white;
-
       outline: none;
-
       font-size: 14px;
-
       cursor: pointer;
     }
 
@@ -308,21 +223,11 @@
       border-color: #8b5cff;
     }
 
-    /* أنماط الفيديو */
-
     .styles {
       display: grid;
-
-      grid-template-columns:
-        repeat(4, 1fr);
-
+      grid-template-columns: repeat(4,1fr);
       gap: 10px;
-
       margin-top: 12px;
-    }
-
-    .style-option {
-      position: relative;
     }
 
     .style-option input {
@@ -331,116 +236,68 @@
 
     .style-option label {
       display: block;
-
       padding: 12px 8px;
-
       text-align: center;
-
       border-radius: 11px;
-
-      border: 1px solid rgba(255,255,255,0.08);
-
-      background: rgba(255,255,255,0.03);
-
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
       color: #aaaabd;
-
       font-size: 12px;
-
       cursor: pointer;
-
-      transition: 0.3s;
+      transition: .3s;
     }
 
     .style-option input:checked + label {
       border-color: #8b5cff;
-
-      background: rgba(124,60,255,0.16);
-
+      background: rgba(124,60,255,.16);
       color: white;
-
-      box-shadow:
-        0 0 18px rgba(124,60,255,0.12);
+      box-shadow: 0 0 18px rgba(124,60,255,.12);
     }
-
-    /* زر الإنشاء */
 
     .generate-button {
       width: 100%;
-
       margin-top: 30px;
-
       padding: 17px;
-
       border: none;
-
       border-radius: 14px;
-
-      background:
-        linear-gradient(
-          90deg,
-          #6c2cff,
-          #b63cff
-        );
-
+      background: linear-gradient(90deg,#6c2cff,#b63cff);
       color: white;
-
       font-size: 17px;
-
       font-weight: bold;
-
       cursor: pointer;
-
-      box-shadow:
-        0 12px 35px rgba(108,44,255,0.25);
-
-      transition: 0.3s;
+      box-shadow: 0 12px 35px rgba(108,44,255,.25);
+      transition: .3s;
     }
 
     .generate-button:hover {
       transform: translateY(-2px);
-
-      box-shadow:
-        0 16px 45px rgba(108,44,255,0.4);
+      box-shadow: 0 16px 45px rgba(108,44,255,.4);
     }
 
     .generate-button:disabled {
-      opacity: 0.7;
+      opacity: .7;
       cursor: wait;
       transform: none;
     }
 
-    /* منطقة الحالة */
-
     .status-box {
       display: none;
-
       margin-top: 25px;
-
       padding: 25px;
-
       border-radius: 18px;
-
-      background: rgba(0,0,0,0.2);
-
-      border: 1px solid rgba(255,255,255,0.08);
-
+      background: rgba(0,0,0,.2);
+      border: 1px solid rgba(255,255,255,.08);
       text-align: center;
     }
 
     .loader {
       width: 45px;
       height: 45px;
-
       margin: 0 auto 15px;
-
       border-radius: 50%;
-
-      border: 3px solid rgba(255,255,255,0.1);
-
+      border: 3px solid rgba(255,255,255,.1);
       border-top-color: #8b5cff;
-
-      animation:
-        spin 1s linear infinite;
+      animation: spin 1s linear infinite;
     }
 
     @keyframes spin {
@@ -452,84 +309,134 @@
     .status-title {
       font-size: 17px;
       font-weight: bold;
-
       margin-bottom: 8px;
     }
 
     .status-text {
       color: #88889d;
-
       font-size: 13px;
-
       line-height: 1.7;
     }
 
-    /* خطوات الإنشاء */
-
     .steps {
       display: grid;
-
-      grid-template-columns:
-        repeat(4, 1fr);
-
+      grid-template-columns: repeat(4,1fr);
       gap: 10px;
-
       margin-top: 22px;
     }
 
     .step {
       padding: 12px 7px;
-
       border-radius: 10px;
-
-      background: rgba(255,255,255,0.025);
-
+      background: rgba(255,255,255,.025);
       color: #69697d;
-
       font-size: 11px;
-
-      transition: 0.4s;
+      transition: .4s;
     }
 
     .step.active {
-      background: rgba(124,60,255,0.14);
-
+      background: rgba(124,60,255,.14);
       color: #c6b7ff;
-
-      border: 1px solid rgba(139,92,255,0.2);
+      border: 1px solid rgba(139,92,255,.2);
     }
 
-    /* المشاريع */
+    .step.done {
+      background: rgba(0,229,255,.08);
+      color: #8eefff;
+      border: 1px solid rgba(0,229,255,.15);
+    }
+
+    /* نتيجة الفيديو */
+
+    .video-result {
+      display: none;
+      margin-top: 25px;
+      padding: 25px;
+      border-radius: 18px;
+      background: rgba(0,0,0,.25);
+      border: 1px solid rgba(255,255,255,.08);
+      text-align: center;
+    }
+
+    .video-result h3 {
+      margin-bottom: 15px;
+    }
+
+    .video-player {
+      width: 100%;
+      max-height: 600px;
+      border-radius: 15px;
+      background: #000;
+      display: block;
+    }
+
+    .download-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 22px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.1);
+      color: white;
+      text-decoration: none;
+      transition: .3s;
+    }
+
+    .download-button:hover {
+      background: rgba(255,255,255,.12);
+    }
 
     .projects {
       max-width: 900px;
-
       margin: 35px auto 0;
     }
 
     .projects-title {
       font-size: 20px;
-
       margin-bottom: 15px;
     }
 
     .project-card {
       padding: 18px;
-
       border-radius: 15px;
-
-      background: rgba(255,255,255,0.035);
-
-      border: 1px solid rgba(255,255,255,0.07);
-
+      background: rgba(255,255,255,.035);
+      border: 1px solid rgba(255,255,255,.07);
       color: #aaaabd;
-
       font-size: 13px;
     }
 
-    /* موبايل */
+    .project-item {
+      padding: 15px 0;
+    }
 
-    @media (max-width: 700px) {
+    .project-item + .project-item {
+      border-top: 1px solid rgba(255,255,255,.07);
+    }
+
+    .project-item strong {
+      display: block;
+      color: white;
+      margin-bottom: 6px;
+    }
+
+    .project-meta {
+      color: #77778b;
+      font-size: 12px;
+    }
+
+    .error-message {
+      display: none;
+      margin-top: 18px;
+      padding: 14px;
+      border-radius: 12px;
+      background: rgba(255,70,100,.08);
+      border: 1px solid rgba(255,70,100,.18);
+      color: #ff9eae;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    @media (max-width:700px) {
 
       header {
         padding: 0 20px;
@@ -540,8 +447,7 @@
       }
 
       .container {
-        padding:
-          35px 15px 60px;
+        padding: 35px 15px 60px;
       }
 
       .creator {
@@ -553,21 +459,17 @@
       }
 
       .styles {
-        grid-template-columns:
-          repeat(2, 1fr);
+        grid-template-columns: repeat(2,1fr);
       }
 
       .steps {
-        grid-template-columns:
-          repeat(2, 1fr);
+        grid-template-columns: repeat(2,1fr);
       }
 
       textarea {
         min-height: 160px;
       }
-
     }
-
   </style>
 </head>
 
@@ -575,33 +477,20 @@
 
 <div class="background-glow"></div>
 
-
 <header>
 
   <div class="logo">
-
-    <div class="logo-icon">
-      ▶
-    </div>
-
+    <div class="logo-icon">▶</div>
     VIZORA
-
   </div>
-
 
   <div class="user-area">
 
-    <span
-      class="user-name"
-      id="userName"
-    >
+    <span class="user-name" id="userName">
       مرحبًا بك 👋
     </span>
 
-    <button
-      class="logout"
-      onclick="logout()"
-    >
+    <button class="logout" onclick="logout()">
       تسجيل الخروج
     </button>
 
@@ -609,9 +498,7 @@
 
 </header>
 
-
 <main class="container">
-
 
   <div class="page-title">
 
@@ -628,19 +515,16 @@
 
     <p>
       اكتب فكرتك، اختر الإعدادات المناسبة،
-      واترك VIZORA يحوّل فكرتك إلى مشروع فيديو.
+      واترك VIZORA يحوّل فكرتك إلى فيديو.
     </p>
 
   </div>
 
-
   <section class="creator">
-
 
     <label class="label" for="idea">
       💡 فكرة الفيديو
     </label>
-
 
     <textarea
       id="idea"
@@ -648,7 +532,6 @@
       placeholder="مثال: أنشئ فيديو قصير عن شاب يبدأ مشروعًا صغيرًا من الصفر، ويواجه عدة تحديات ثم ينجح في النهاية..."
       oninput="updateCounter()"
     ></textarea>
-
 
     <div class="textarea-footer">
 
@@ -662,9 +545,7 @@
 
     </div>
 
-
     <div class="options">
-
 
       <div class="option-group">
 
@@ -689,7 +570,6 @@
         </select>
 
       </div>
-
 
       <div class="option-group">
 
@@ -719,7 +599,6 @@
 
       </div>
 
-
       <div class="option-group">
 
         <label class="label">
@@ -739,7 +618,6 @@
         </select>
 
       </div>
-
 
       <div class="option-group">
 
@@ -765,9 +643,7 @@
 
       </div>
 
-
     </div>
-
 
     <div style="margin-top:28px;">
 
@@ -775,9 +651,7 @@
         🎨 أسلوب الفيديو
       </label>
 
-
       <div class="styles">
-
 
         <div class="style-option">
 
@@ -795,7 +669,6 @@
 
         </div>
 
-
         <div class="style-option">
 
           <input
@@ -810,7 +683,6 @@
           </label>
 
         </div>
-
 
         <div class="style-option">
 
@@ -827,7 +699,6 @@
 
         </div>
 
-
         <div class="style-option">
 
           <input
@@ -843,11 +714,9 @@
 
         </div>
 
-
       </div>
 
     </div>
-
 
     <button
       class="generate-button"
@@ -857,6 +726,10 @@
       ✨ إنشاء الفيديو
     </button>
 
+    <div
+      class="error-message"
+      id="errorMessage"
+    ></div>
 
     <div
       class="status-box"
@@ -869,44 +742,31 @@
         class="status-title"
         id="statusTitle"
       >
-        جاري تجهيز مشروعك...
+        جاري تجهيز الفيديو...
       </div>
 
       <div
         class="status-text"
         id="statusText"
       >
-        VIZORA يقوم بتحليل فكرتك.
+        VIZORA يستعد لإنشاء الفيديو.
       </div>
-
 
       <div class="steps">
 
-        <div
-          class="step active"
-          id="step1"
-        >
+        <div class="step active" id="step1">
           🧠 تحليل الفكرة
         </div>
 
-        <div
-          class="step"
-          id="step2"
-        >
+        <div class="step" id="step2">
           📝 كتابة السيناريو
         </div>
 
-        <div
-          class="step"
-          id="step3"
-        >
+        <div class="step" id="step3">
           🎞️ تجهيز المشاهد
         </div>
 
-        <div
-          class="step"
-          id="step4"
-        >
+        <div class="step" id="step4">
           🎬 إخراج الفيديو
         </div>
 
@@ -914,8 +774,34 @@
 
     </div>
 
-  </section>
+    <div
+      class="video-result"
+      id="videoResult"
+    >
 
+      <h3>
+        🎉 الفيديو جاهز
+      </h3>
+
+      <video
+        id="videoPlayer"
+        class="video-player"
+        controls
+        playsinline
+      ></video>
+
+      <a
+        id="downloadButton"
+        class="download-button"
+        href="#"
+        download="vizora-video.mp4"
+      >
+        📥 تحميل الفيديو
+      </a>
+
+    </div>
+
+  </section>
 
   <section class="projects">
 
@@ -933,22 +819,19 @@
 
   </section>
 
-
 </main>
-
 
 <script>
 
-  /* ================================
-     التحقق من تسجيل الدخول
-  ================================= */
+  /* =========================================
+     إعدادات المستخدم
+  ========================================= */
 
   const loggedIn =
     localStorage.getItem("vizoraLoggedIn");
 
   const savedUser =
     localStorage.getItem("vizoraUser");
-
 
   if (loggedIn !== "true") {
 
@@ -957,16 +840,15 @@
   }
 
 
-  /* ================================
+  /* =========================================
      عرض اسم المستخدم
-  ================================= */
+  ========================================= */
 
   if (savedUser) {
 
     try {
 
-      const user =
-        JSON.parse(savedUser);
+      const user = JSON.parse(savedUser);
 
       if (user.name) {
 
@@ -977,18 +859,29 @@
 
     } catch (error) {
 
-      console.log(
-        "تعذر قراءة بيانات المستخدم"
-      );
+      console.log("تعذر قراءة بيانات المستخدم");
 
     }
 
   }
 
 
-  /* ================================
+  /* =========================================
+     تسجيل الخروج
+  ========================================= */
+
+  function logout() {
+
+    localStorage.removeItem("vizoraLoggedIn");
+
+    window.location.href = "login.html";
+
+  }
+
+
+  /* =========================================
      عداد الأحرف
-  ================================= */
+  ========================================= */
 
   function updateCounter() {
 
@@ -1004,11 +897,155 @@
   }
 
 
-  /* ================================
+  /* =========================================
+     إظهار رسالة الخطأ
+  ========================================= */
+
+  function showError(message) {
+
+    const error =
+      document.getElementById("errorMessage");
+
+    error.textContent = message;
+
+    error.style.display = "block";
+
+  }
+
+
+  /* =========================================
+     إخفاء رسالة الخطأ
+  ========================================= */
+
+  function hideError() {
+
+    const error =
+      document.getElementById("errorMessage");
+
+    error.style.display = "none";
+
+    error.textContent = "";
+
+  }
+
+
+  /* =========================================
+     إعادة الخطوات
+  ========================================= */
+
+  function resetSteps() {
+
+    for (let i = 1; i <= 4; i++) {
+
+      const step =
+        document.getElementById("step" + i);
+
+      step.classList.remove("active");
+      step.classList.remove("done");
+
+    }
+
+  }
+
+
+  /* =========================================
+     تشغيل خطوات الواجهة
+     مؤقتًا إلى أن نربط الـBackend
+  ========================================= */
+
+  function runDemoSteps(callback) {
+
+    const steps = [
+
+      {
+        id: 1,
+        title: "جاري تحليل فكرتك 🧠",
+        text:
+          "VIZORA يقوم بفهم فكرتك وتحديد محتوى الفيديو."
+      },
+
+      {
+        id: 2,
+        title: "جاري كتابة السيناريو 📝",
+        text:
+          "يتم تحويل فكرتك إلى سيناريو مناسب."
+      },
+
+      {
+        id: 3,
+        title: "جاري تجهيز المشاهد 🎞️",
+        text:
+          "يتم تجهيز وصف المشاهد والأسلوب البصري."
+      },
+
+      {
+        id: 4,
+        title: "جاري إخراج الفيديو 🎬",
+        text:
+          "جاري تجهيز النتيجة النهائية."
+      }
+
+    ];
+
+    let current = 0;
+
+    function next() {
+
+      if (current > 0) {
+
+        const previous =
+          document.getElementById(
+            "step" + current
+          );
+
+        previous.classList.remove("active");
+        previous.classList.add("done");
+
+      }
+
+      current++;
+
+      if (current <= steps.length) {
+
+        const item = steps[current - 1];
+
+        const step =
+          document.getElementById(
+            "step" + item.id
+          );
+
+        step.classList.add("active");
+
+        document.getElementById(
+          "statusTitle"
+        ).textContent = item.title;
+
+        document.getElementById(
+          "statusText"
+        ).textContent = item.text;
+
+        setTimeout(next, 1200);
+
+      } else {
+
+        callback();
+
+      }
+
+    }
+
+    next();
+
+  }
+
+
+  /* =========================================
      إنشاء الفيديو
-  ================================= */
+  ========================================= */
 
   function generateVideo() {
+
+    hideError();
 
     const idea =
       document.getElementById("idea").value.trim();
@@ -1025,17 +1062,34 @@
     const voice =
       document.getElementById("voice").value;
 
-
-    const style =
+    const styleElement =
       document.querySelector(
         'input[name="style"]:checked'
-      ).value;
+      );
+
+    const style =
+      styleElement
+        ? styleElement.value
+        : "cinematic";
 
 
     if (!idea) {
 
-      alert(
+      showError(
         "اكتب فكرة الفيديو أولًا 💡"
+      );
+
+      document.getElementById("idea").focus();
+
+      return;
+
+    }
+
+
+    if (idea.length < 10) {
+
+      showError(
+        "اكتب فكرة أطول قليلًا حتى نحصل على نتيجة أفضل."
       );
 
       document.getElementById("idea").focus();
@@ -1048,278 +1102,4 @@
     const button =
       document.getElementById(
         "generateButton"
-      );
-
-
-    const statusBox =
-      document.getElementById(
-        "statusBox"
-      );
-
-
-    const statusTitle =
-      document.getElementById(
-        "statusTitle"
-      );
-
-
-    const statusText =
-      document.getElementById(
-        "statusText"
-      );
-
-
-    button.disabled = true;
-
-    button.textContent =
-      "جاري تجهيز الفيديو...";
-
-
-    statusBox.style.display =
-      "block";
-
-
-    /*
-      هذه المرحلة محاكاة للواجهة فقط.
-      لاحقًا سنربطها بمحرك AI حقيقي.
-    */
-
-    const steps = [
-
-      {
-        element: "step1",
-
-        title:
-          "جاري تحليل فكرتك 🧠",
-
-        text:
-          "VIZORA يقوم بفهم محتوى الفيديو وتحديد نوع المشاهد."
-      },
-
-      {
-        element: "step2",
-
-        title:
-          "جاري كتابة السيناريو 📝",
-
-        text:
-          "يتم تحويل فكرتك إلى سيناريو منظم."
-      },
-
-      {
-        element: "step3",
-
-        title:
-          "جاري تجهيز المشاهد 🎞️",
-
-        text:
-          "يتم تجهيز وصف المشاهد والأسلوب البصري."
-      },
-
-      {
-        element: "step4",
-
-        title:
-          "جاري إخراج الفيديو 🎬",
-
-        text:
-          "تم تجهيز المشروع. الخطوة التالية ستكون إنشاء الفيديو فعليًا."
-      }
-
-    ];
-
-
-    let currentStep = 0;
-
-
-    function nextStep() {
-
-      if (currentStep > 0) {
-
-        document
-          .getElementById(
-            steps[currentStep - 1].element
-          )
-          .classList.remove("active");
-
-      }
-
-
-      if (currentStep < steps.length) {
-
-        const current =
-          steps[currentStep];
-
-
-        document
-          .getElementById(
-            current.element
-          )
-          .classList.add("active");
-
-
-        statusTitle.textContent =
-          current.title;
-
-
-        statusText.textContent =
-          current.text;
-
-
-        currentStep++;
-
-
-        setTimeout(
-          nextStep,
-          1500
-        );
-
-      } else {
-
-        finishProject();
-
-      }
-
-    }
-
-
-    nextStep();
-
-
-    /* حفظ المشروع */
-
-    function finishProject() {
-
-      button.disabled = false;
-
-      button.textContent =
-        "✨ إنشاء فيديو جديد";
-
-
-      const project = {
-
-        idea: idea,
-
-        ratio: ratio,
-
-        duration: duration,
-
-        language: language,
-
-        voice: voice,
-
-        style: style,
-
-        date:
-          new Date().toLocaleString(
-            "ar-EG"
-          )
-
-      };
-
-
-      let projects =
-        JSON.parse(
-          localStorage.getItem(
-            "vizoraProjects"
-          ) || "[]"
-        );
-
-
-      projects.unshift(project);
-
-
-      localStorage.setItem(
-        "vizoraProjects",
-        JSON.stringify(projects)
-      );
-
-
-      statusTitle.textContent =
-        "تم تجهيز المشروع بنجاح 🎉";
-
-
-      statusText.textContent =
-        "تم حفظ إعدادات مشروعك. إنشاء الفيديو الحقيقي سيتم بعد ربط محرك الذكاء الاصطناعي.";
-
-
-      loadProjects();
-
-    }
-
-  }
-
-
-  /* ================================
-     عرض المشاريع
-  ================================= */
-
-  function loadProjects() {
-
-    const projectsList =
-      document.getElementById(
-        "projectsList"
-      );
-
-
-    let projects =
-      JSON.parse(
-        localStorage.getItem(
-          "vizoraProjects"
-        ) || "[]"
-      );
-
-
-    if (!projects.length) {
-
-      projectsList.textContent =
-        "لا توجد مشاريع حتى الآن. ابدأ بإنشاء أول فيديو لك 🚀";
-
-      return;
-
-    }
-
-
-    projectsList.innerHTML = "";
-
-
-    projects
-      .slice(0, 5)
-      .forEach(
-        function(project, index) {
-
-          const item =
-            document.createElement(
-              "div"
-            );
-
-
-          item.style.padding =
-            "15px 0";
-
-
-          if (index > 0) {
-
-            item.style.borderTop =
-              "1px solid rgba(255,255,255,0.07)";
-
-          }
-
-
-          item.innerHTML =
-
-            "<strong style='color:white;display:block;margin-bottom:6px;'>" +
-            "🎬 " +
-            escapeHTML(
-              project.idea.substring(
-                0,
-                90
-              )
-            ) +
-            "</strong>" +
-
-            "<span>" +
-            "📐 " +
-            escapeHTML(
-              project.ratio
- 
+     
