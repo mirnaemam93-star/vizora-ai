@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>تسجيل الدخول — VIZORA AI</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #070711;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .background-glow {
+      position: fixed;
+      width: 420px;
+      height: 420px;
+      background: #6c2cff;
+      filter: blur(180px);
+      opacity: 0.18;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .login-box {
+      width: 100%;
+      max-width: 430px;
+      position: relative;
+      z-index: 2;
+      padding: 38px 30px;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.045);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 25px 80px rgba(0,0,0,0.45);
+    }
+
+    .brand {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .logo {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 15px;
+      border-radius: 17px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      background: linear-gradient(135deg, #00e5ff, #7c3cff, #ff3cac);
+      box-shadow: 0 0 30px rgba(124,60,255,0.45);
+    }
+
+    .brand h1 {
+      font-size: 27px;
+      margin-bottom: 8px;
+    }
+
+    .brand p {
+      color: #9999ae;
+      font-size: 14px;
+    }
+
+    .field {
+      margin-bottom: 17px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #d7d7e5;
+    }
+
+    .field input {
+      width: 100%;
+      padding: 15px;
+      border-radius: 13px;
+      border: 1px solid rgba(255,255,255,0.1);
+      outline: none;
+      background: rgba(0,0,0,0.25);
+      color: white;
+      font-size: 15px;
+      direction: rtl;
+    }
+
+    .field input:focus {
+      border-color: #8b5cff;
+      box-shadow: 0 0 0 3px rgba(139,92,255,0.12);
+    }
+
+    .login-button {
+      width: 100%;
+      padding: 15px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 13px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      background: linear-gradient(90deg, #6c2cff, #b63cff);
+      transition: 0.3s;
+    }
+
+    .login-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 24px 0;
+      color: #707084;
+      font-size: 13px;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .google-button {
+      width: 100%;
+      padding: 14px;
+      border-radius: 13px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .google-button:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .register {
+      text-align: center;
+      margin-top: 25px;
+      color: #9292a7;
+      font-size: 14px;
+    }
+
+    .register a {
+      color: #b995ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back {
+      display: block;
+      text-align: center;
+      margin-top: 22px;
+      color: #77778c;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .back:hover {
+      color: white;
+    }
+
+    @media (max-width: 480px) {
+      .login-box {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="background-glow"></div>
+
+<div class="login-box">
+
+  <div class="brand">
+
+    <div class="logo">
+      ▶
+    </div>
+
+    <h1>VIZORA AI</h1>
+
+    <p>اصنع فيديوهاتك بطريقة مختلفة ✨</p>
+
+  </div>
+
+
+  <form onsubmit="login(event)">
+
+    <div class="field">
+      <label>البريد الإلكتروني</label>
+
+      <input
+        type="email"
+        id="email"
+        placeholder="example@email.com"
+        required
+      >
+    </div>
+
+
+    <div class="field">
+      <label>كلمة المرور</label>
+
+      <input
+        type="password"
+        id="password"
+        placeholder="••••••••"
+        required
+      >
+    </div>
+
+
+    <button class="login-button" type="submit">
+      تسجيل الدخول
+    </button>
+
+  </form>
+
+
+  <div class="divider">
+    أو
+  </div>
+
+
+  <button class="google-button" onclick="googleLogin()">
+    🌐 المتابعة باستخدام Google
+  </button>
+
+
+  <div class="register">
+    ليس لديك حساب؟
+    <a href="register.html">إنشاء حساب</a>
+  </div>
+
+
+  <a class="back" href="index.html">
+    ← العودة إلى الصفحة الرئيسية
+  </a>
+
+</div>
+
+
+<script>
+
+  function login(event) {
+
+    event.preventDefault();
+
+    const email = document.getElementById("email").value;
+
+    alert("مرحبًا بك في VIZORA AI 👋\n\nسيتم تفعيل تسجيل الدخول الحقيقي في المرحلة القادمة.");
+
+  }
+
+
+  function googleLogin() {
+
+    alert("سيتم ربط تسجيل الدخول باستخدام Google في المرحلة القادمة.");
+
+  }
+
+</script>
+
+</body>
+  </html>
