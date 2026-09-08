@@ -259,16 +259,29 @@
 <body>
 
 <header>
+
   <div class="logo">
     <div class="logo-icon">▶</div>
     VIZORA
   </div>
 
   <nav>
-    <a href="#features">المميزات</a>
-    <a href="#about">عن VIZORA</a>
-    <a href="#" class="login">تسجيل الدخول</a>
+
+    <a href="#features">
+      المميزات
+    </a>
+
+    <a href="#about">
+      عن VIZORA
+    </a>
+
+    <!-- تم إصلاح زر تسجيل الدخول -->
+    <a href="login.html" class="login">
+      تسجيل الدخول
+    </a>
+
   </nav>
+
 </header>
 
 
@@ -293,13 +306,19 @@
     </p>
 
     <div class="buttons">
-      <button class="primary" onclick="startCreating()">
+
+      <a
+        href="register.html"
+        class="primary"
+        style="text-decoration:none;display:inline-block;"
+      >
         🎬 ابدأ مجانًا
-      </button>
+      </a>
 
       <a href="#features" class="secondary">
         اكتشف المميزات
       </a>
+
     </div>
 
   </div>
@@ -316,27 +335,53 @@
   <div class="cards">
 
     <div class="card">
-      <div class="card-icon">🧠</div>
-      <h3>فكرة إلى سيناريو</h3>
+
+      <div class="card-icon">
+        🧠
+      </div>
+
+      <h3>
+        فكرة إلى سيناريو
+      </h3>
+
       <p>
         اكتب فكرتك فقط، وسيقوم VIZORA بتحويلها إلى سيناريو منظم وجاهز للإنتاج.
       </p>
+
     </div>
 
+
     <div class="card">
-      <div class="card-icon">🎞️</div>
-      <h3>مشاهد ذكية</h3>
+
+      <div class="card-icon">
+        🎞️
+      </div>
+
+      <h3>
+        مشاهد ذكية
+      </h3>
+
       <p>
         قسّم الفيديو إلى مشاهد واضبط كل مشهد قبل إنشاء الفيديو النهائي.
       </p>
+
     </div>
 
+
     <div class="card">
-      <div class="card-icon">🎙️</div>
-      <h3>صوت احترافي</h3>
+
+      <div class="card-icon">
+        🎙️
+      </div>
+
+      <h3>
+        صوت احترافي
+      </h3>
+
       <p>
         أضف تعليقًا صوتيًا مناسبًا لفيديوك واجعل المحتوى أكثر احترافية.
       </p>
+
     </div>
 
   </div>
@@ -345,15 +390,10 @@
 
 
 <footer id="about">
+
   © 2026 VIZORA AI — AI Video Creator
+
 </footer>
-
-
-<script>
-  function startCreating() {
-    alert("🚀 قريبًا ستبدأ صناعة أول فيديو لك مع VIZORA AI!");
-  }
-</script>
 
 </body>
   </html>
