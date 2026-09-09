@@ -98,7 +98,6 @@
       background: rgba(0,0,0,0.25);
       color: white;
       font-size: 15px;
-      direction: rtl;
     }
 
     .field input:focus {
@@ -122,6 +121,12 @@
 
     .login-button:hover {
       transform: translateY(-2px);
+    }
+
+    .login-button:disabled {
+      opacity: 0.7;
+      cursor: wait;
+      transform: none;
     }
 
     .divider {
@@ -150,10 +155,6 @@
       color: white;
       font-size: 15px;
       cursor: pointer;
-    }
-
-    .google-button:hover {
-      background: rgba(255,255,255,0.08);
     }
 
     .register {
@@ -208,55 +209,70 @@
 
   </div>
 
-
   <form onsubmit="login(event)">
 
     <div class="field">
-      <label>البريد الإلكتروني</label>
+
+      <label for="email">
+        البريد الإلكتروني
+      </label>
 
       <input
         type="email"
         id="email"
         placeholder="example@email.com"
+        autocomplete="email"
         required
       >
+
     </div>
 
-
     <div class="field">
-      <label>كلمة المرور</label>
+
+      <label for="password">
+        كلمة المرور
+      </label>
 
       <input
         type="password"
         id="password"
         placeholder="••••••••"
+        autocomplete="current-password"
         required
       >
+
     </div>
 
-
-    <button class="login-button" type="submit">
+    <button
+      class="login-button"
+      id="loginButton"
+      type="submit"
+    >
       تسجيل الدخول
     </button>
 
   </form>
 
-
   <div class="divider">
     أو
   </div>
 
-
-  <button class="google-button" onclick="googleLogin()">
+  <button
+    class="google-button"
+    onclick="googleLogin()"
+  >
     🌐 المتابعة باستخدام Google
   </button>
 
-
   <div class="register">
-    ليس لديك حساب؟
-    <a href="register.html">إنشاء حساب</a>
-  </div>
 
+    ليس لديك حساب؟
+
+    <a href="register.html">
+      إنشاء حساب
+    </a>
+
+  </div>
 
   <a class="back" href="index.html">
     ← العودة إلى الصفحة الرئيسية
@@ -264,27 +280,129 @@
 
 </div>
 
-
 <script>
 
   function login(event) {
 
     event.preventDefault();
 
-    const email = document.getElementById("email").value;
+    const email =
+      document.getElementById("email")
+        .value
+        .trim()
+        .toLowerCase();
 
-    alert("مرحبًا بك في VIZORA AI 👋\n\nسيتم تفعيل تسجيل الدخول الحقيقي في المرحلة القادمة.");
+    const password =
+      document.getElementById("password")
+        .value;
+
+    const button =
+      document.getElementById("loginButton");
+
+
+    if (!email || !password) {
+
+      alert("من فضلك اكتب البريد وكلمة المرور.");
+
+      return;
+
+    }
+
+
+    /*
+      الحصول على بيانات الحساب المحفوظة
+      من عملية إنشاء الحساب.
+    */
+
+    const savedUser =
+      localStorage.getItem("vizoraUser");
+
+
+    if (!savedUser) {
+
+      alert(
+        "لا يوجد حساب محفوظ على هذا الجهاز.\n\n" +
+        "من فضلك أنشئ حسابًا أولًا."
+      );
+
+      return;
+
+    }
+
+
+    let user;
+
+    try {
+
+      user = JSON.parse(savedUser);
+
+    } catch (error) {
+
+      alert(
+        "بيانات الحساب تالفة.\n" +
+        "من فضلك أنشئ الحساب مرة أخرى."
+      );
+
+      return;
+
+    }
+
+
+    /*
+      نتأكد أن البريد المستخدم
+      هو نفس البريد الذي تم التسجيل به.
+    */
+
+    if (
+      !user.email ||
+      user.email.toLowerCase() !== email
+    ) {
+
+      alert(
+        "البريد الإلكتروني غير موجود في الحساب المحفوظ."
+      );
+
+      return;
+
+    }
+
+
+    button.disabled = true;
+    button.textContent = "جاري تسجيل الدخول...";
+
+
+    /*
+      تسجيل حالة الدخول.
+    */
+
+    localStorage.setItem(
+      "vizoraLoggedIn",
+      "true"
+    );
+
+
+    alert(
+      "تم تسجيل الدخول بنجاح 🎉\n\n" +
+      "مرحبًا " +
+      (user.name || "") +
+      " 👋"
+    );
+
+
+    window.location.href = "create.html";
 
   }
 
 
   function googleLogin() {
 
-    alert("سيتم ربط تسجيل الدخول باستخدام Google في المرحلة القادمة.");
+    alert(
+      "تسجيل الدخول باستخدام Google سيتم ربطه لاحقًا بخدمة Google OAuth."
+    );
 
   }
 
 </script>
 
 </body>
-  </html>
+      </html>
